@@ -42,35 +42,7 @@
       </div>
     </div>
   </section>
-
-  <section class="mb-5">
-    <div class="container">
-      <h2 class="text-center my-top-5">TECHNICAL SKILLS</h2>
-      <p class="bottom-line"></p>
-      <p class="h5">React JS</p>
-      <div class="progress mb-3 py-3">
-        <div class="progress-bar bg-success align-self-center py-3" style="width: 90%;"><strong>90%</strong></div>
-      </div>
-      <p class="h5">JavaScript</p>
-      <div class="progress mb-3 py-3">
-        <div class="progress-bar bg-success align-self-center py-3" style="width: 95%;"><strong>95%</strong></div>
-      </div>
-      <p class="h5">Node JS</p>
-      <div class="progress mb-3 py-3">
-        <div class="progress-bar bg-success align-self-center py-3" style="width: 85%;"><strong>85%</strong></div>
-      </div>
-      <p class="h5">Express JS</p>
-      <div class="progress mb-3 py-3">
-        <div class="progress-bar bg-success align-self-center py-3" style="width: 80%;"><strong>80%</strong></div>
-      </div>
-      <p class="h5">MongoDB</p>
-      <div class="progress mb-3 py-3">
-        <div class="progress-bar bg-success align-self-center py-3" style="width: 90%;"><strong>90%</strong></div>
-      </div>
-    </div>
-  </section>
-
-
+  
   <!-- TESTIMONIALS -->
   <section id="testimonials" class="p-4 bg-dark text-white">
     <div class="container-fluid">
