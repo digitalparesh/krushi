@@ -1,9 +1,13 @@
-<footer id="main-footer" class="text-center p-4">
+<footer id="main-footer" class="text-center py-4">
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				<p>Copyright &copy;
-					<span id="year"></span> Time Space</p>
+				Developed By:
+				<span id="year"></span> Hemant Varvariya.
+
+				&nbsp; Copyright &copy;
+				<span id="year"></span>Information on arable pesticides.
+
 			</div>
 		</div>
 	</div>

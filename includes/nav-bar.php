@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-success">
   <div class="container">
-    <a href="index.php" class="navbar-brand">Krushi</a>
+    <a href="index.php" class="navbar-brand">Information on arable pesticides</a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
     </button>

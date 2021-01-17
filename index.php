@@ -72,12 +72,12 @@ include 'includes/head.php';
           <p>Groundnut belongs to family Leguminoceae (Fabaceae) sub-family Papilionoideae...</p>
         </div>
         <div class="col-md-4 mb-4 text-center">
-        <img class="img-fluid" src="./img/groundnut.jpg" />
+          <img class="img-fluid" src="./img/groundnut.jpg" />
           <h3>Groundnut</h3>
           <p>Groundnut belongs to family Leguminoceae (Fabaceae) sub-family Papilionoideae...</p>
         </div>
         <div class="col-md-4 mb-4 text-center">
-        <img class="img-fluid" src="./img/groundnut.jpg" />
+          <img class="img-fluid" src="./img/groundnut.jpg" />
           <h3>Groundnut</h3>
           <p>Groundnut belongs to family Leguminoceae (Fabaceae) sub-family Papilionoideae...</p>
         </div>
@@ -89,12 +89,12 @@ include 'includes/head.php';
           <p>Groundnut belongs to family Leguminoceae (Fabaceae) sub-family Papilionoideae...</p>
         </div>
         <div class="col-md-4 mb-4 text-center">
-        <img class="img-fluid" src="./img/groundnut.jpg" />
+          <img class="img-fluid" src="./img/groundnut.jpg" />
           <h3>Groundnut</h3>
           <p>Groundnut belongs to family Leguminoceae (Fabaceae) sub-family Papilionoideae...</p>
         </div>
         <div class="col-md-4 mb-4 text-center">
-        <img class="img-fluid" src="./img/groundnut.jpg" />
+          <img class="img-fluid" src="./img/groundnut.jpg" />
           <h3>Groundnut</h3>
           <p>Groundnut belongs to family Leguminoceae (Fabaceae) sub-family Papilionoideae...</p>
         </div>
