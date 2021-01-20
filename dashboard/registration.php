@@ -1,3 +1,7 @@
+<?php
+  include './includes/helper.php';
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +20,7 @@
 <body>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="container">
-      <a href="/index.php" class="navbar-brand">Time Space</a>
+      <a href="" class="navbar-brand">Time Space</a>
     </div>
   </nav>
 
@@ -67,8 +71,7 @@
                 </div>
                 <div class="form-group">
                   <label for="password">Bio</label>
-                  <textarea class="form-control" name="bio" required>
-                  </textarea>
+                  <textarea class="form-control" name="bio" required></textarea>
                 </div>
                 <input id="submit" type="submit" name="registration" value="Ok" class="btn btn-primary btn-block">
               </form>
@@ -94,7 +97,7 @@
     </div>
   </footer>
 
-  <script src="/dashboard/js/main.js"></script>
+  <script src="<?php echo url('js/main.js')?>"></script>
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -120,7 +123,7 @@
 <?php
   if(isset($_SESSION['data']))
   {
-    header("location:/dashboard/index.php");
+    header("location:".url('index.php'));
   }
 ?>
 
@@ -133,12 +136,13 @@ if(isset($_POST['registration']))
   $email = $_POST['email'];
   $password = $_POST['password'];
   $bio = $_POST['bio'];
-  
-  $sql = "INSERT INTO admin (name,email,bio,password) VALUES ('$name', '$email', '$bio','$password')";
-  
+  $encrypt_password = password_hash($password, PASSWORD_DEFAULT);
+  $sql = "INSERT INTO admin (name,email,bio,password) VALUES ('$name', '$email', '$bio','$encrypt_password')";
+
   if ($conn->query($sql)) {
     echo "New record created successfully";
-    header("location:/dashboard/login.php/?message=Submit+SucessFully");
+    $_SESSION['alert'] = ['title'=>'Registration successfully','body'=>'now you can Log in','type'=>'success'];
+    echo "<script>window.location='".url('login.php')."'</script>";
   }
   else {
     echo "Error: " . $sql . "<br>" . $conn->error;

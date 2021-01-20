@@ -7,16 +7,16 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item <?php if ($active == 'home') echo "active"; ?>">
-          <a href="./index.php" class="nav-link">Home</a>
+          <a href="<?php echo url('index.php') ?>" class="nav-link">Home</a>
         </li>
         <li class="nav-item <?php if ($active == 'about') echo "active"; ?>">
-          <a href="./about.php" class="nav-link">About Us</a>
+          <a href="<?php echo url('about.php')?>" class="nav-link">About Us</a>
         </li>
         <li class="nav-item <?php if ($active == 'service') echo "active"; ?>">
-          <a href="./services.php" class="nav-link">Category</a>
+          <a href="<?php echo url('services.php')?>" class="nav-link">Category</a>
         </li>
         <li class="nav-item <?php if ($active == 'contact') echo "active"; ?>">
-          <a href="./contact.php" class="nav-link">Contact</a>
+          <a href="<?php echo url('contact.php')?>" class="nav-link">Contact</a>
         </li>
       </ul>
     </div>

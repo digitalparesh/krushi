@@ -3,6 +3,7 @@
 session_start();
 session_unset();
 
-header('Location:/dashboard/login.php');
+include "./includes/helper.php";
+header('Location:'.url('login.php'));
 
 ?>

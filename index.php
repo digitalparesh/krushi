@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-$title = "Time Space";
+$title = "Krusi";
 $active = 'home';
 include 'includes/head.php';
 ?>

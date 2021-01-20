@@ -1,3 +1,7 @@
+<?php
+  include 'includes/helper.php';
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,14 +13,14 @@
     integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
     integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="<?php echo url('css/style.css') ?>">
   <title>Time Space | Admin Panel</title>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="container">
-      <a href="/index.php" class="navbar-brand">Time Space</a>
+      <a href="<?php echo url('index.php') ?>" class="navbar-brand">Time Space</a>
     </div>
   </nav>
 
@@ -54,11 +58,11 @@
               <form action="#" method="POST">
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="text" class="form-control" id="email" name="email">
+                  <input type="email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="form-group">
                   <label for="password">Password</label>
-                  <input id="password" type="password" class="form-control" name="password">
+                  <input id="password" type="password" class="form-control" name="password" required>
                   <!-- <p class="validate text-danger">Passwoed does not match</p> -->
                 </div>
                 <input id="submit" type="submit" name="login" value="Login" class="btn btn-primary btn-block">
@@ -85,7 +89,7 @@
     </div>
   </footer>
 
-  <script src="/dashboard/js/main.js"></script>
+  <script src="<?php echo url('js/main.js')?>"></script>
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -104,7 +108,23 @@
 </body>
 
 </html>
-<?php session_start(); ?>
+<?php
+if(isset($_SESSION['alert']))
+  {
+  $message = $_SESSION['alert'];
+  unset($_SESSION['alert']);
+?>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+    Swal.fire(
+      '<?php echo($message['title']) ?>',
+      '<?php echo($message['body']) ?>',
+      '<?php echo($message['type']) ?>',
+    )
+    </script>
+<?php
+  }
+?>
 <?php
   include 'includes/connection.php';
   if(isset($_POST['login']))
@@ -112,17 +132,18 @@
     $email=$_POST['email'];
     $pass=$_POST['password'];
 
-    $data=mysqli_query($conn,"SELECT * FROM admin WHERE email='$email' AND password='$pass'");
+    $data=mysqli_query($conn,"SELECT * FROM admin WHERE email='$email' limit 1");
     $res=mysqli_num_rows($data);
-
-    if($res==1)
+    $user = $data->fetch_assoc();
+    if(password_verify($pass,$user['password']))
     {
-      $_SESSION['data'] = $data->fetch_assoc();
-      header('location:/dashboard/index.php');
+      $_SESSION['data'] = $user;
+      header('location:'.url('index.php'));
     }
     else
     {
-      header("location:/dashboard/login.php/?message=Invalid+Login+Detail+$res");
+      $_SESSION['alert'] = ['title'=>'Opps!!!!!!','body'=>'Invalid Login Detail','type'=>'warning'];
+      header("location:".url('login.php'));
     }
   }
 ?>
@@ -130,6 +151,6 @@
 <?php
   if(isset($_SESSION['data']))
   {
-    header("location:/dashboard/index.php");
+    header("location:".url("index.php"));
   }
 ?>
