@@ -1,24 +1,6 @@
 <?php
 
 include 'includes/connection.php';
-if(isset($_POST['submit']))
-{
-  $fname = $_POST['fname'];
-  $lname = $_POST['lname'];
-  $email = $_POST['email'];
-  $phone = $_POST['phone'];
-  $message = strip_tags($_POST['message']);
-  
-  $sql = "INSERT INTO contact (fname,lname,email,phone,message) VALUES ('$fname', '$lname', '$email','$phone','$message')";
-  
-  if ($conn->query($sql)) {
-    echo "New record created successfully";
-    header("Location:/contact.php/?message=Submit+SucessFully");
-  }
-  else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-  }
-}
 ?>
 
 <!DOCTYPE html>
@@ -140,19 +122,42 @@ if(isset($_POST['submit']))
   <!-- FOOTER -->
 <?php
   include 'includes/footer.php';
-  if(isset($_GET['message']))
+  if(isset($_SESSION['alert']))
   {
+    $message = $_SESSION['alert'];
+    unset($_SESSION['alert']);
 ?>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
     Swal.fire(
-      'Submit Successfully',
-      'We will get back to you soon',
-      'success'
+      '<?php echo($message['title']) ?>',
+      '<?php echo($message['body']) ?>',
+      '<?php echo($message['type']) ?>',
     )
     </script>
 <?php
   }
+?>
+<?php
+if(isset($_POST['submit']))
+{
+  $fname = $_POST['fname'];
+  $lname = $_POST['lname'];
+  $email = $_POST['email'];
+  $phone = $_POST['phone'];
+  $message = strip_tags($_POST['message']);
+
+  $sql = "INSERT INTO contact (fname,lname,email,phone,message) VALUES ('$fname', '$lname', '$email','$phone','$message')";
+
+  if ($conn->query($sql)) {
+    echo "New record created successfully";
+    $_SESSION['alert'] = ['title'=>'Form Submit Successfully','body'=>'we will get back to you soon','type'=>'success'];
+    header("Location: ".url('contact.php'));
+  }
+  else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+}
 ?>
 </body>
 

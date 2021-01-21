@@ -24,7 +24,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <a href="/dashboard/index.php" class="btn btn-light btn-block">
+          <a href="<?php echo url('index.php')?>" class="btn btn-light btn-block">
             <i class="fas fa-arrow-left"></i> Back To Dashboard
           </a>
         </div>
