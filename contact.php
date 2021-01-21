@@ -150,9 +150,9 @@ if(isset($_POST['submit']))
   $sql = "INSERT INTO contact (fname,lname,email,phone,message) VALUES ('$fname', '$lname', '$email','$phone','$message')";
 
   if ($conn->query($sql)) {
-    echo "New record created successfully";
     $_SESSION['alert'] = ['title'=>'Form Submit Successfully','body'=>'we will get back to you soon','type'=>'success'];
-    header("Location: ".url('contact.php'));
+    echo "New record created successfully";
+    echo "<script>window.location='".url('contact.php')."'</script>";
   }
   else {
     echo "Error: " . $sql . "<br>" . $conn->error;
