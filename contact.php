@@ -7,14 +7,15 @@ include 'includes/connection.php';
 <html lang="en">
 
 <?php
-  $title = "Contact Us";
-  $active = 'contact';
-  include 'includes/head.php';
+$title = "Contact Us";
+$active = 'contact';
+include 'includes/head.php';
 ?>
+
 <body>
-<?php
+  <?php
   include 'includes/nav-bar.php';
-?>
+  ?>
 
   <!-- PAGE HEADER -->
   <header id="page-header">
@@ -38,11 +39,13 @@ include 'includes/connection.php';
               <h4>Get In Touch</h4>
               <p>If you want to visit our company then always welcome to we happy to meet you :)</p>
               <h4>Address</h4>
-              <p>Junagadh, Gujarat, India</p>
+              <p>College Of Agricultural Information Technology
+                Anand Agricultural University-Anand 388 110
+              </p>
               <h4>Email</h4>
-              <p>pnandaniya01@gmail.com</p>
+              <p>varvariyahemant95@gmail.com</p>
               <h4>Phone</h4>
-              <p>+916354315536</p>
+              <p>+919737673205</p>
             </div>
           </div>
         </div>
@@ -95,70 +98,58 @@ include 'includes/connection.php';
   </section>
 
   <!-- STAFF -->
-  <section id="staff" class="py-5 text-center bg-dark text-white">
+  <!-- <section id="staff" class="py-5 text-center bg-dark text-white">
     <div class="container">
       <h1>Our Staff</h1>
       <hr>
       <div class="row">
-        <div class="col-md-4 mt-5">
-          <img src="img/sagar.jpeg" alt="" class="back img-fluid rounded-circle mb-2">
-          <h4 class="sagar">Sagar Ahir</h4>
-          <small class="sagarText">Back End Developer / Marketing Manager</small>
-        </div>
+       
         <div class="col-md-4 mt-5 mb-5">
           <img src="img/ceo.jpg" alt="" class="ceo img-fluid rounded-circle mb-2">
           <h4 class="paresh">Paresh Nandaniya</h4>
           <small class="pareshText">CEO / Full Stack Developer</small>
         </div>
-        <div class="col-md-4 mt-5">
-          <img src="img/deep.jpeg" alt="" class="img-fluid rounded-circle mb-2">
-          <h4>Deep Ghetiya</h4>
-          <small>Front-End Developer / Video Editor</small>
-        </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- FOOTER -->
-<?php
+  <?php
   include 'includes/footer.php';
-  if(isset($_SESSION['alert']))
-  {
+  if (isset($_SESSION['alert'])) {
     $message = $_SESSION['alert'];
     unset($_SESSION['alert']);
-?>
+  ?>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
-    Swal.fire(
-      '<?php echo($message['title']) ?>',
-      '<?php echo($message['body']) ?>',
-      '<?php echo($message['type']) ?>',
-    )
+      Swal.fire(
+        '<?php echo ($message['title']) ?>',
+        '<?php echo ($message['body']) ?>',
+        '<?php echo ($message['type']) ?>',
+      )
     </script>
-<?php
+  <?php
   }
-?>
-<?php
-if(isset($_POST['submit']))
-{
-  $fname = $_POST['fname'];
-  $lname = $_POST['lname'];
-  $email = $_POST['email'];
-  $phone = $_POST['phone'];
-  $message = strip_tags($_POST['message']);
+  ?>
+  <?php
+  if (isset($_POST['submit'])) {
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $message = strip_tags($_POST['message']);
 
-  $sql = "INSERT INTO contact (fname,lname,email,phone,message) VALUES ('$fname', '$lname', '$email','$phone','$message')";
+    $sql = "INSERT INTO contact (fname,lname,email,phone,message) VALUES ('$fname', '$lname', '$email','$phone','$message')";
 
-  if ($conn->query($sql)) {
-    $_SESSION['alert'] = ['title'=>'Form Submit Successfully','body'=>'we will get back to you soon','type'=>'success'];
-    echo "New record created successfully";
-    echo "<script>window.location='".url('contact.php')."'</script>";
+    if ($conn->query($sql)) {
+      $_SESSION['alert'] = ['title' => 'Form Submit Successfully', 'body' => 'we will get back to you soon', 'type' => 'success'];
+      echo "New record created successfully";
+      echo "<script>window.location='" . url('contact.php') . "'</script>";
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
   }
-  else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-  }
-}
-?>
+  ?>
 </body>
 
 </html>

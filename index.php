@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-$title = "Krusi";
+$title = "Information on arable pesticides";
 $active = 'home';
 include 'includes/head.php';
 ?>
@@ -67,36 +67,19 @@ include 'includes/head.php';
     <div class="container">
       <div class="row">
         <div class="col-md-4 mb-4 text-center">
-          <img class="img-fluid" src="./img/groundnut.jpg" />
-          <h3>Groundnut</h3>
-          <p>Groundnut belongs to family Leguminoceae (Fabaceae) sub-family Papilionoideae...</p>
+          <img class="img-fluid fix" src="./img/paddy/download.jpg" />
+          <h3>Paddy</h3>
+          <p>Paddy(Oryza sativa) cultivation is the most important agricultural operation in the country, not only...</p>
         </div>
         <div class="col-md-4 mb-4 text-center">
-          <img class="img-fluid" src="./img/groundnut.jpg" />
-          <h3>Groundnut</h3>
-          <p>Groundnut belongs to family Leguminoceae (Fabaceae) sub-family Papilionoideae...</p>
+          <img class="img-fluid fix" src="./img/cotton/cotton.jpg" />
+          <h3>Cotton</h3>
+          <p>Cotton is a pest-loving plant and due to this habit it has become a....</p>
         </div>
         <div class="col-md-4 mb-4 text-center">
-          <img class="img-fluid" src="./img/groundnut.jpg" />
-          <h3>Groundnut</h3>
-          <p>Groundnut belongs to family Leguminoceae (Fabaceae) sub-family Papilionoideae...</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 mb-4 text-center">
-          <img class="img-fluid" src="./img/groundnut.jpg" />
-          <h3>Groundnut</h3>
-          <p>Groundnut belongs to family Leguminoceae (Fabaceae) sub-family Papilionoideae...</p>
-        </div>
-        <div class="col-md-4 mb-4 text-center">
-          <img class="img-fluid" src="./img/groundnut.jpg" />
-          <h3>Groundnut</h3>
-          <p>Groundnut belongs to family Leguminoceae (Fabaceae) sub-family Papilionoideae...</p>
-        </div>
-        <div class="col-md-4 mb-4 text-center">
-          <img class="img-fluid" src="./img/groundnut.jpg" />
-          <h3>Groundnut</h3>
-          <p>Groundnut belongs to family Leguminoceae (Fabaceae) sub-family Papilionoideae...</p>
+          <img class="img-fluid fix" src="./img/wheat/download.jpg" />
+          <h3>wheat</h3>
+          <p>Wheat (Triticum aestivum L.) is the second most important cereal crop of India next to Rice. ...</p>
         </div>
       </div>
     </div>
@@ -108,7 +91,7 @@ include 'includes/head.php';
       <div class="row">
         <div class="col">
           <div class="container pt-5">
-            <h1>Krushi</h1>
+            <h1>Information on arable pesticides</h1>
             <p class="d-none d-md-block">We Specialize in Creating Great Quality Website design,software,application,web
               application and video editing.</p>
           </div>
@@ -122,13 +105,13 @@ include 'includes/head.php';
     <div class="container">
       <div class="row">
         <div class="col-md-6 align-self-center">
-          <h3>Time Space</h3>
+          <h3>Information on arable pesticides</h3>
           <p>Time Space Tech is an IT service company in Junagadh. We provide multiple range of Services for clients who
             value quality services and high end design. We also provide Project Training for Students and Professional
             Training to get you started with the current trends in the IT industry.</p>
         </div>
-        <div class="col-md-6">
-          <img src="img/laptop.png" alt="" class="img-fluid">
+        <div class="col-md-6 d-flex justify-content-center">
+          <img src="img/logo.jpg" alt="" class="img-fluid">
         </div>
       </div>
     </div>
@@ -162,19 +145,19 @@ include 'includes/head.php';
       <div class="row mb-4">
         <div class="col-md-4 d-flex justify-content-center">
           <a href="img/img-4.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="563" data-width="563">
-            <img src="img/img-4.jpg" alt="" class="img-fluid">
+            <img src="img/wheat/image1.jpeg" alt="" class="img-fluid fix">
           </a>
         </div>
 
         <div class="col-md-4 d-flex justify-content-center">
           <a href="img/img-5.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="564" data-width="564">
-            <img src="img/img-5.jpg" alt="" class="img-fluid">
+            <img src="img/cotton/image10.png" alt="" class="img-fluid fix">
           </a>
         </div>
 
         <div class="col-md-4 d-flex justify-content-center">
           <a href="img/img-6.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="565" data-width="565">
-            <img src="img/img-6.jpg" alt="" class="img-fluid">
+            <img src="img/paddy/image1.jpeg" alt="" class="img-fluid fix">
           </a>
         </div>
       </div>

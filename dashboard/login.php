@@ -1,6 +1,6 @@
 <?php
-  include 'includes/helper.php';
-  session_start();
+include 'includes/helper.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,18 +9,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link rel="stylesheet" href="<?php echo url('css/style.css') ?>">
-  <title>Time Space | Admin Panel</title>
+  <title>Information on arable pesticides</title>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="container">
-      <a href="<?php echo url('index.php') ?>" class="navbar-brand">Time Space</a>
+      <a href="<?php echo url('index.php') ?>" class="navbar-brand">Information on arable pesticides</a>
     </div>
   </nav>
 
@@ -28,9 +26,10 @@
   <header id="main-header" class="py-2 bg-primary text-white">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <h1>
-            <i class="fas fa-user"></i> Time Space Admin</h1>
+        <div class="col-md-12">
+          <h4 style="width: 100%">
+            <i class="fas fa-user"></i> Information on arable pesticides Admin
+          </h4>
         </div>
       </div>
     </div>
@@ -82,23 +81,18 @@
           <p class="lead text-center mt-3">
             Copyright &copy;
             <span id="year"></span>
-            Time Space
+            Information on arable pesticides
           </p>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="<?php echo url('js/main.js')?>"></script>
+  <script src="<?php echo url('js/main.js') ?>"></script>
 
-  <script src="http://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-    crossorigin="anonymous"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
 
   <script>
@@ -109,48 +103,42 @@
 
 </html>
 <?php
-if(isset($_SESSION['alert']))
-  {
+if (isset($_SESSION['alert'])) {
   $message = $_SESSION['alert'];
   unset($_SESSION['alert']);
 ?>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script>
     Swal.fire(
-      '<?php echo($message['title']) ?>',
-      '<?php echo($message['body']) ?>',
-      '<?php echo($message['type']) ?>',
+      '<?php echo ($message['title']) ?>',
+      '<?php echo ($message['body']) ?>',
+      '<?php echo ($message['type']) ?>',
     )
-    </script>
+  </script>
 <?php
-  }
+}
 ?>
 <?php
-  include 'includes/connection.php';
-  if(isset($_POST['login']))
-  {
-    $email=$_POST['email'];
-    $pass=$_POST['password'];
+include 'includes/connection.php';
+if (isset($_POST['login'])) {
+  $email = $_POST['email'];
+  $pass = $_POST['password'];
 
-    $data=mysqli_query($conn,"SELECT * FROM admin WHERE email='$email' limit 1");
-    $res=mysqli_num_rows($data);
-    $user = $data->fetch_assoc();
-    if(password_verify($pass,$user['password']))
-    {
-      $_SESSION['data'] = $user;
-      header('location:'.url('index.php'));
-    }
-    else
-    {
-      $_SESSION['alert'] = ['title'=>'Opps!!!!!!','body'=>'Invalid Login Detail','type'=>'warning'];
-      header("location:".url('login.php'));
-    }
+  $data = mysqli_query($conn, "SELECT * FROM admin WHERE email='$email' limit 1");
+  $res = mysqli_num_rows($data);
+  $user = $data->fetch_assoc();
+  if (password_verify($pass, $user['password'])) {
+    $_SESSION['data'] = $user;
+    header('location:' . url('index.php'));
+  } else {
+    $_SESSION['alert'] = ['title' => 'Opps!!!!!!', 'body' => 'Invalid Login Detail', 'type' => 'warning'];
+    header("location:" . url('login.php'));
   }
+}
 ?>
 
 <?php
-  if(isset($_SESSION['data']))
-  {
-    header("location:".url("index.php"));
-  }
+if (isset($_SESSION['data'])) {
+  header("location:" . url("index.php"));
+}
 ?>

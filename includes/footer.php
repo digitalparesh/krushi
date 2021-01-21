@@ -2,18 +2,17 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				Developed By:
-				<span id="year"></span> Hemant Varvariya.
+				Developed By: Hemant Varvariya.
 
 				&nbsp; Copyright &copy;
-				<span id="year"></span>Information on arable pesticides.
+				<span id="year"></span> Information on arable pesticides.
 
 			</div>
 		</div>
 	</div>
 </footer>
 
-<script src="<?php url("js/main.js")?>"></script>
+<script src="<?php url("js/main.js") ?>"></script>
 
 
 <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
