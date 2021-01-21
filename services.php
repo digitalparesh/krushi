@@ -276,7 +276,7 @@ include 'includes/head.php';
     <div class="container">
       <div class="tab">
         <button class="tablinks" onclick="openCity('London')">Groundnut</button>
-        <button class="tablinks" onclick="openCity('Paris')">Paris</button>
+        <button class="tablinks" onclick="openCity('Paris')">Cotton</button>
         <button class="tablinks" onclick="openCity('Tokyo')">Tokyo</button>
       </div>
 
@@ -353,8 +353,77 @@ include 'includes/head.php';
       </div>
 
       <div id="Paris" class="w3-container city" style="display:none">
-        <h2>Paris</h2>
-        <p>Paris is the capital of France.</p>
+        <h2 class="text-center">Cotton</h2>
+
+        <div class="text-center my-3">
+          <img src="./img/cotton/cotton.jpg" class="img-fluid " alt="">
+        </div>
+        <p class="text-justify">Cotton is a pest-loving plant and due to this habit it has become a problematic crop for the farmers. Major cotton pest's are the Tobacco caterpillars , pink, spotted and American bollworms, aphids, whitefly, jassids, mealy bugs and the spider mite. The bollworm/budworm complex is a primary insect pest problem with larvae attacking squares and bolls causing significant yield losses if left uncontrolled. The cotton whitefly is a pest of primary importance for fibre, horticultural and ornamental crops worldwide. It can cause extensive damage through direct feeding, honeydew production and as a viral vector.
+
+        </p>
+        <div class="my-3 d-flex justify-content-around">
+          <div class="">
+            <h3>1. Spotted Bollworms</h3>
+            <img src="./img/cotton/image1.jpeg" class="img-fluid fix " alt="">
+          </div>
+          <div class="">
+            <h3>Targa Super</h3>
+            <img src="./img/targa-super-500x500.jpg" class="img-fluid fix_height " alt="">
+          </div>
+        </div>
+        <p class="text-justify">Targa Super  (Quizalofop Ethyl 5% EC) is selective, systemic herbicide of Aryloxyphenoxy-propionates group. It is used to control narrow leaf weeds in broad leaf crops.</p>
+        <span style="color: green">MODE OF ACTION</span>
+        <p class="text-justify">
+          Targa Super effectively controls the narrow leaf weeds like Echinochloa spp., Goose grass, fox tail, Cynodon (doob), Large crab grass, Saccharum sp. (kans), Hemarthria sp. (suttu), Wild sorghum, Volunteer paddy, Volunteer maize, Volunteer pearl millet, etc. Targa Super is very quickly absorbed by the weeds and translocated and kill the weeds. The affected weeds are unable to regenerate.  It is quickly absorbed by the weeds, hence rain even one hour after spray does not affect its effectiveness. Weed leaves turn puplish/ red within 5-8 days after Targa Super application and within 10-15 days are completely killed.
+        </p>
+        <span style="color: green">PACK SIZE
+        </span>
+        <p class="text-justify">
+          100 ml, 250 ml, 500 ml, 1 Ltr
+        </p>
+        <span style="color: green">FEATURES & BENEFITS
+        </span>
+        <p class="text-justify">
+        <ul>
+          <li>It is a very effective weedicide for control of narrow leaf weeds in broad leaf crops.
+          </li>
+          <li>It doesnot burn the weeds but kills the weeds - so they do not regerminate.</li>
+          <li>These dead weeds turn into organic manure to boost plant health and vigor.
+          </li>
+          <li>Targa Super is strictly not recommended on paddy, wheat, sorghum, maize, barley, pearl millet, sugarcane crop.
+          </li>
+        </ul>
+        </p>
+        <hr>
+        <div class="my-3 d-flex justify-content-around">
+          <div class="">
+            <h3>2. Collar Rot</h3>
+            <img src="./img/Collar root.jpg" class="img-fluid fix " alt="">
+          </div>
+          <div class="">
+            <h3>Vitavax Power
+            </h3>
+            <img src="./img/Vitvax powder.png" class="img-fluid fix_height " alt="">
+          </div>
+        </div>
+        <p class="text-justify">Vitavax Power  (Carboxin 37.5% + Thiram 37.5% DS) is a broad spectrum, dual action (systemic and contact) fungicide which controls seed and soil borne diseases, and also acts as plant growth stimulant. World wide, it is a specialized seed treatment fungicide for effective control and prevention of disease present externally and within the seeds, with increased level of disease control.
+        </p>
+        <p class="text-justify">
+          Vitavax Power protects the seed and emerging seedlings from seed and early seed borne diseases such as bunt, loose smut, covered smut, collar and charcoal rot, seedling diseases and blight in most of the crops. 
+        </p>
+        <span style="color: green">PACK SIZE
+        </span>
+        <p class="text-justify">
+          10gm, 100gm, 250gm, 500gm, 1kg
+        </p>
+        <span style="color: green">FEATURES & BENEFITS
+        </span>
+        <p class="text-justify">
+        <ul>
+          <li>Vitavax Power encourages early emergence and uniform growth of seedlings, gives higher yield through the impact of combined action of carboxin and thiram on effective disease control and germination stimulation.
+        </ul>
+        </p>
+
       </div>
 
       <div id="Tokyo" class="w3-container city" style="display:none">
